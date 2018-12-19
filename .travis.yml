@@ -1,0 +1,50 @@
+language: node_js
+
+sudo: false
+
+node_js:
+  - "lts/*"
+
+cache:
+  apt: true
+  yarn: true
+  directories:
+    - node_modules
+    - themes/amber/node_modules
+
+install:
+  - yarn install --pure-lockfile
+  - cd themes/amber
+  - yarn install --pure-lockfile
+  - cd -
+
+script:
+  - cd themes/amber
+  - sed -i "s|process.env.appId|$OAUTH_APP_ID|g" _config.yml
+  - sed -i "s|process.env.appKey|$OAUTH_APP_KEY|g" _config.yml
+  - npm run build
+  - cd -
+  - npm run build
+
+before_deploy:
+  - git config --global user.name $USER_NAME
+  - git config --global user.email $USER_EMAIL
+
+deploy:
+  provider: pages
+  local-dir: public
+  skip_cleanup: true
+  keep-history: true
+  email: $USER_EMAIL
+  name: $USER_NAME
+  github-token: $GITHUB_TOKEN
+
+after_deploy:
+  - cp -R public .deploy && cd .deploy && git init
+  - git add . && git commit -m "Update blog by travis-ci with build $TRAVIS_BUILD_NUMBER at `date '+%Y-%m-%d %H:%M:%S'`"
+  - git push --force --quiet https://${USER_NAME}:${CODING_TOKEN}@${CODING_REF} master
+  - cd -
+
+branches:
+  only:
+    - master

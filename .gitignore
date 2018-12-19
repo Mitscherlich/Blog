@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+db.json
+debug.log
+*.log
+node_modules/
+.deploy*/
+yarn.lock
+package-lock.json
+_admin-config.yml
+.vscode/
+public/

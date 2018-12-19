@@ -1,0 +1,61 @@
+# Menu
+menu:
+  Essay: /related?category=essay
+  Tech: /related?category=tech
+  Note: /related?category=note
+  ACG: /related?tag=ACG
+  Node.js: /related?tag=Node-js
+  Python: /related?tag=Python
+  Archives: /archives
+  Projects: /projects
+  Messages: /messages
+  Donate: /donate
+  Profile: /profile
+
+# RSS
+rss:
+  enable: true
+  path: /api/atom.xml
+
+# Social links
+social:
+  github: https://github.com/Mitscherlich
+  weibo: https://weibo.com/Mitscherlich
+  websites:
+    - text: YUOSC
+      link: https://yuosc.clou
+    - text: EasyHexo
+      link: https://easyhexo.github.io/Easy-Hexo/
+
+# Sidebar
+sidebar:
+  leaf:
+    Check out my other **[*projects*](/projects/)** and
+    our wonderful **[*community forum*](http://forum.yuosc.club)**
+    which you should totally join.
+  github: Mitscherlich
+
+# Comments
+comments:
+  enable: true
+  engine: valine
+  valine:
+    appId: process.env.appId
+    appKey: process.env.appKey
+  gitalk:
+    clientID: process.env.clientId
+    clientSecret: process.env.clientSecret
+    repo: mitscherlich.me
+    owner: Mitscherlich
+    admin:
+      - Mitscherlich
+
+# Powered by information
+powered_by:
+  author: Mitscherlich
+  link: https://github.com/Mitscherlich
+
+# Google Analytics
+google_analytics:
+  enable: true
+  track_id: UA-126376019-1

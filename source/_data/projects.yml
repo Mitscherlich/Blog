@@ -1,0 +1,20 @@
+- name: 长江大学开源社区
+  description: 传播开源精神
+  link: https://yuosc.club
+  preview: https://img-mitscherlich-me.oss-cn-hangzhou.aliyuncs.com/18-10-26/37203583.jpg
+- name: 长江大学一键评教系统
+  description: 从重复劳动中解脱出来
+  link: http://115.159.114.29:8091/index.html
+  preview: https://img-mitscherlich-me.oss-cn-hangzhou.aliyuncs.com/18-10-26/96966467.jpg
+- name: Seeta 人脸识别 DEMO
+  description: 配合移动应用使用
+  link: http://115.159.114.29:3001
+  preview: https://img-mitscherlich-me.oss-cn-hangzhou.aliyuncs.com/18-10-26/84053233.jpg
+- name: MNIST 手写体数字识别 DEMO
+  description: Based on tensorflow + mnist + flask
+  link: http://115.159.114.29:3002
+  preview: https://img-mitscherlich-me.oss-cn-hangzhou.aliyuncs.com/18-10-26/64995708.jpg
+- name: Koa Seeta 人脸识别 DEMO
+  description: Based on koa + seeta
+  link: http://115.159.114.29:3003
+  preview: https://img-mitscherlich-me.oss-cn-hangzhou.aliyuncs.com/18-10-26/50267246.jpg
