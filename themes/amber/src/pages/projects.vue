@@ -5,12 +5,10 @@
         b-card(:img-src="preview", :key="`project-${i}`", v-for="({ name, description, link, preview }, i) in projects")
           h4 {{ name }}
           p {{ description }}
-          footer(slot="footer")
-            b-link.text-muted
-              fa-icon.mr-2.text-success(:icon="['far', 'thumbs-up']")
-              small {{ $t('visit') }}
-      b-row.justify-content-center(v-else)
-        loading.my-5(style="margin: 0 auto;")
+          footer(slot="footer"): b-link.text-muted(:href="link")
+            fa-icon.mr-2.text-success(:icon="['far', 'thumbs-up']")
+            small {{ $t('visit') }}
+      b-row.justify-content-center(v-else): loading.my-5(style="margin: 0 auto;")
 </template>
 
 <script lang="ts">
@@ -28,5 +26,6 @@ export default class Projects extends Vue {
 .projects
   .card
     .card-img
-      border-radius 0
+      border-bottom-right-radius 0!important
+      border-bottom-left-radius 0!important
 </style>

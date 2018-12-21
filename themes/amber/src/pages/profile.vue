@@ -1,66 +1,64 @@
 <template lang="pug">
   .rounded(style="min-height: 65vh;")
     transition(name="fade", mode="out-in")
-      b-container.profile.box-shadow(v-if="ready")
-        b-row
-          b-col(md=4)
-            .profile-img
-              b-img-lazy.border.box-shadow(rounded="circle", :src="avatar")
-            .profile-work.d-none.d-md-block.d-lg-block
-              p.text-uppercase.mt-4 work link
-              b-link(:href="website") Website
-              br/
-              b-link(:href="github") Github
-              p.text-uppercase.mt-4 skills
-              b-link(:href="link", :key="`skill-${i}`", v-for="({ text, link }, i) of skills") {{ text }}#[br/]
-          b-col(md=8)
-            header.profile-head.mt-4
-              h4 {{ name }}
-              h5 {{ profession }}
-              p.proile-rating.text-uppercase
-                | rankings&nbsp;:&nbsp;
-                span {{ rankings }}
-            b-tabs.profile-tab
-              b-tab(title="About", active)
-                b-row
-                  b-col(md=3): label Name
-                  b-col(md=6): p {{ name }}
-                b-row
-                  b-col(md=3): label Email
-                  b-col(md=6): p {{ email }}
-                b-row
-                  b-col(md=3): label Profession
-                  b-col(md=6): p {{ profession }}
-                b-row
-                  b-col(md=3): label Skills
-                  b-col(md=6): p {{ plainSkills.join(', ') }}
-              b-tab(title="Achievements")
-                b-row(:key="`paper-${i}`", v-for="({ text, date, link }, i) in achievements")
-                  b-col(md=1): label Title
-                  b-col(md=8): b-link(:href="link", target="_blank") {{ text }}
-                  b-col(md=1): label Date
-                  b-col(md=2): p {{ date }}
-              b-tab(title="Education")
-                b-row.mb-3(v-if="bachelor")
-                  b-col(cols=12): b-card.flex-md-row.box-shadow(no-body, style="height:250px;")
-                    b-card-body.d-flex.flex-column.align-items-start
-                      strong.d-inline-block.mb-2.text-primary Bachelor
-                      h3.mb-1 {{ bachelor.title }}
-                      div.mb-1.text-muted {{ bachelor.date }}
-                      small.card-text.text-muted.mb-auto(v-html="$md.renderInline(bachelor.text)")
-                      b-link(:href="bachelor.link") Learn more
-                    b-img.d-none.d-md-block.d-lg-block.mr-5.my-auto.flex-auto.border.box-shadow(rounded="circle", style="width:10rem;height:10rem;", :src="bachelor.image")
-              b-tab(title="Experience")
-                b-row.mb-3(v-if="experience", :key="`exp-${i}`", v-for="({ title, text, date, link, image }, i) in experience")
-                  b-col(cols=12): b-card.flex-md-row.box-shadow(no-body, style="height:250px;")
-                    b-card-body.d-flex.flex-column.align-items-start
-                      h3.mb-1 {{ title }}
-                      div.mb-1.text-muted {{ date }}
-                      small.card-text.text-muted.mb-auto(v-html="$md.renderInline(text)")
-                      b-link(:href="link") Learn more
-                    b-img.d-none.d-md-block.d-lg-block.mr-5.my-auto.flex-auto.border.box-shadow(rounded="circle", style="width:10rem;height:10rem;", :src="image")
-      b-row.justify-content-center(v-else)
-        loading.my-5(style="margin: 0 auto;")
+      b-container.profile.box-shadow(v-if="ready"): b-row
+        b-col(md=4)
+          .profile-img
+            b-img-lazy.border.box-shadow(rounded="circle", :src="avatar")
+          .profile-work.d-none.d-md-block.d-lg-block
+            p.text-uppercase.mt-4 work link
+            b-link(:href="website") Website
+            br/
+            b-link(:href="github") Github
+            p.text-uppercase.mt-4 skills
+            b-link(:href="link", :key="`skill-${i}`", v-for="({ text, link }, i) of skills") {{ text }}#[br/]
+        b-col(md=8)
+          header.profile-head.mt-4
+            h4 {{ name }}
+            h5 {{ profession }}
+            p.proile-rating.text-uppercase
+              | rankings&nbsp;:&nbsp;
+              span {{ rankings }}
+          b-tabs.profile-tab
+            b-tab(title="About", active)
+              b-row
+                b-col(md=3): label Name
+                b-col(md=6): p {{ name }}
+              b-row
+                b-col(md=3): label Email
+                b-col(md=6): p {{ email }}
+              b-row
+                b-col(md=3): label Profession
+                b-col(md=6): p {{ profession }}
+              b-row
+                b-col(md=3): label Skills
+                b-col(md=6): p {{ plainSkills.join(', ') }}
+            b-tab(title="Achievements")
+              b-row(:key="`paper-${i}`", v-for="({ text, date, link }, i) in achievements")
+                b-col(md=1): label Title
+                b-col(md=8): b-link(:href="link", target="_blank") {{ text }}
+                b-col(md=1): label Date
+                b-col(md=2): p {{ date }}
+            b-tab(title="Education")
+              b-row.mb-3(v-if="bachelor")
+                b-col(cols=12): b-card.flex-md-row.box-shadow(no-body, style="height:250px;")
+                  b-card-body.d-flex.flex-column.align-items-start
+                    strong.d-inline-block.mb-2.text-primary Bachelor
+                    h3.mb-1 {{ bachelor.title }}
+                    div.mb-1.text-muted {{ bachelor.date }}
+                    small.card-text.text-muted.mb-auto(v-html="$md.renderInline(bachelor.text)")
+                    b-link(:href="bachelor.link") Learn more
+                  b-img.d-none.d-md-block.d-lg-block.mr-5.my-auto.flex-auto.border.box-shadow(rounded="circle", style="width:10rem;height:10rem;", :src="bachelor.image")
+            b-tab(title="Experience")
+              b-row.mb-3(v-if="experience", :key="`exp-${i}`", v-for="({ title, text, date, link, image }, i) in experience")
+                b-col(cols=12): b-card.flex-md-row.box-shadow(no-body, style="height:250px;")
+                  b-card-body.d-flex.flex-column.align-items-start
+                    h3.mb-1 {{ title }}
+                    div.mb-1.text-muted {{ date }}
+                    small.card-text.text-muted.mb-auto(v-html="$md.renderInline(text)")
+                    b-link(:href="link") Learn more
+                  b-img.d-none.d-md-block.d-lg-block.mr-5.my-auto.flex-auto.border.box-shadow(rounded="circle", style="width:10rem;height:10rem;", :src="image")
+      b-row.justify-content-center(v-else): loading.my-5(style="margin: 0 auto;")
 </template>
 
 <script lang="ts">
@@ -180,6 +178,15 @@ export default class Profile extends Vue {
       color #0062cc
     .nav-tabs
       margin-bottom 5%
+      height 2.75rem
+      overflow-x auto
+      overflow-y hidden
+      display flex
+      flex-wrap nowrap
+      -ms-overflow-style none
+      overflow -moz-scrollbars-none
+      &::-webkit-scrollbar
+        display none
       .nav-link
         font-weight 600
         border none

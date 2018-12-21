@@ -51,8 +51,8 @@ export default new Vuex.Store({
   },
   actions: {
     async [FETCH_META]({ commit }) {
-      const siteConfig = (await fetchHexoConfig()).data || {};
-      const siteData = (await fetchSiteData()).data || {};
+      const { data: siteConfig } = await fetchHexoConfig();
+      const { data: siteData } = await fetchSiteData();
       commit(RELOAD_META, Object.assign({ ...siteConfig }, { siteData }));
     },
     async [LOAD_GOOGLE_ANALYTICS]({ state }, { router }: { router: VueRouter }) {
