@@ -18,28 +18,42 @@ tags:
 
 ### 数学表达
 
-$ \mathbf w = \left\lgroup \matrix{w_1 \cr \vdots \cr w_m} \right\rgroup, \mathbf x = \left\lgroup \matrix{x_1 \cr \vdots \cr x_m} \right\rgroup $
+$$
+\mathbf w = \left\lgroup \matrix{w_1 \cr \vdots \cr w_m} \right\rgroup, \mathbf x = \left\lgroup \matrix{x_1 \cr \vdots \cr x_m} \right\rgroup
+$$
 
-$ (z = w_1x_1 + \cdots + w_mx_m): $
+$$
+(z = w_1x_1 + \cdots + w_mx_m):
+$$
 
 ### 激活函数
 
-$ \phi(z) = \begin{cases}
+$$
+\phi(z) = \begin{cases}
 1 \quad\quad if\ z ≥ \theta \\\\
 -1 \quad otherwise
-\end{cases} $
+\end{cases}
+$$
 
 ### 一些数学运算的概念介绍
 
 - 向量点乘(内积)
 
-$ z = w_0x_0 + w_1x_1 + \cdots + w_mx_m = \sum_{j=0}^{m} \mathbf x_j\mathbf w_j = \mathbf w^T\mathbf x $
+$$
+z = w_0x_0 + w_1x_1 + \cdots + w_mx_m = \sum_{j=0}^{m} \mathbf x_j\mathbf w_j = \mathbf w^T\mathbf x
+$$
 
-*例如:* $ \left\lgroup \matrix {1 & 2 & 3} \right\rgroup \cdot \left\lgroup \matrix{4 \cr 5 \cr 6} \right\rgroup = 1\times4 + 2\times5 + 3\times6 = 32 $.
+*例如:*
+$$
+\left\lgroup \matrix {1 & 2 & 3} \right\rgroup \cdot \left\lgroup \matrix{4 \cr 5 \cr 6} \right\rgroup = 1\times4 + 2\times5 + 3\times6 = 32
+$$
 
 - 矩阵转置
 
-*例如:* $ \left\lgroup \matrix {1 & 2 \cr 3 & 4 \cr 5 & 6} \right\rgroup^{T} = \left\lgroup \matrix {1 & 3 & 5 \cr 2 & 4 & 6} \right\rgroup $
+*例如:*
+$$
+\left\lgroup \matrix {1 & 2 \cr 3 & 4 \cr 5 & 6} \right\rgroup^{T} = \left\lgroup \matrix {1 & 3 & 5 \cr 2 & 4 & 6} \right\rgroup
+$$
 
 <!-- more -->
 
@@ -55,12 +69,16 @@ $ z = w_0x_0 + w_1x_1 + \cdots + w_mx_m = \sum_{j=0}^{m} \mathbf x_j\mathbf w_j 
 
 ### 步调函数（激活函数）与阈值
 
-$ w_0 = -\theta\ and\ x_0 = 1 $
+$$
+w_0 = -\theta\ and\ x_0 = 1
+$$
 
-$ z = w_0x_0 + w_1x_1 + \cdots + w_mx_m = \sum_{j=0}^{m} \mathbf x_j\mathbf w_j = \mathbf w^T\mathbf x \quad and \quad\phi(z) = \begin{cases}
+$$
+z = w_0x_0 + w_1x_1 + \cdots + w_mx_m = \sum_{j=0}^{m} \mathbf x_j\mathbf w_j = \mathbf w^T\mathbf x \quad and \quad\phi(z) = \begin{cases}
 1 \quad\quad if\ z ≥ \theta \\\\
 -1 \quad otherwise
-\end{cases} $
+\end{cases}
+$$
 
 ### 权重更新算法
 
