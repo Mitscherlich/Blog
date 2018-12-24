@@ -42,7 +42,7 @@ deploy:
 after_deploy:
   - cp -R public .deploy && cd .deploy && git init
   - git add . && git commit -m "Update blog by travis-ci with build $TRAVIS_BUILD_NUMBER at `date '+%Y-%m-%d %H:%M:%S'`"
-  - git push --force --quiet https://${USER_NAME}:${CODING_TOKEN}@${CODING_REF} master
+  - git push --force --quiet https://${USER_NAME}:${GOGS_TOKEN}@${GOGS_REF} master
   - cd -
 
 branches:
