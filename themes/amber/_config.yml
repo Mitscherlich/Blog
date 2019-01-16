@@ -7,9 +7,9 @@ menu:
   Node.js: /related?tag=Node-js
   Python: /related?tag=Python
   Archives: /archives
-  Projects: /projects
-  Messages: /messages
   Donate: /donate
+  Messages: /messages
+  Projects: /projects
   Profile: /profile
 
 # RSS
