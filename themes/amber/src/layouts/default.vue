@@ -2,14 +2,11 @@
   #blog-app
     Header#blog-header
     main#blog-body
-      b-container.blog-main
-        b-row
-          b-col(:lg="sidebar?8:12")
-            transition(name="fade", mode="out-in")
-              keep-alive
-                router-view
-          transition(name="fade")
-            Sidebar#blog-sidebar.col-lg-4(v-if="sidebar")
+      b-container.blog-main: b-row
+        b-col(:lg="shouldShowSidebar?8:12"): transition(name="fade", mode="out-in")
+          keep-alive
+            router-view
+        Sidebar#blog-sidebar.col-lg-4(v-if="shouldShowSidebar")
     Footer#blog-footer
 </template>
 
@@ -25,12 +22,16 @@ import Sidebar from '@/components/sidebar/Sidebar.vue';
   components: { Header, Footer, Sidebar },
 })
 export default class Default extends Vue {
-  private beforeUpdate() {
+  private get shouldShowSidebar() {
+    return this.$route.meta.sidebar !== false;
+  }
+
+  private mounted() {
     if (!document) {
       return; // ignore this when ssr
     }
     if (this.$route.meta && this.$route.meta.title) {
-      document.title = this.$t(this.$route.meta.title) as string + ' | Amber';
+      document.title = this.$t(this.$route.meta.title) + ' | ' + this.site.title;
     }
   }
 }
@@ -38,10 +39,10 @@ export default class Default extends Vue {
 
 <style src="bootstrap/dist/css/bootstrap.min.css"></style>
 <style src="bootstrap-vue/dist/bootstrap-vue.min.css"></style>
-<style src="dplayer/dist/DPlayer.min.css"></style>
-<style src="katex/dist/katex.min.css"></style>
-<style lang="stylus" src="@/common/stylus/style.styl"></style>
+<style lang="stylus" src="@/common/style/style.styl"></style>
 <style lang="stylus" scoped>
+#blog-app
+  overflow-x hidden
 #blog-sidebar
   position relative
 </style>

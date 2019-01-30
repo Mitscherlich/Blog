@@ -2,10 +2,10 @@
 import { Component, Watch } from 'vue-property-decorator';
 import { IContext } from '@/store';
 import { FETCH_DETAILABLE_TARGET } from '@/store/types';
-import _ from './articles/_slug.vue';
+import Content from './articles/_slug.vue';
 
 @Component({ name: 'Page' })
-export default class Content extends _ {
+export default class Page extends Content {
   protected async fetch({ store, route }: IContext) {
     const slug = route.params.slug;
     await store.dispatch(`detailable/${FETCH_DETAILABLE_TARGET}`, { isImplicit: true, sourceOrSlug: slug });

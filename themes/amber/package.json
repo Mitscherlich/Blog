@@ -1,12 +1,11 @@
 {
   "name": "hexo-theme-amber",
-  "version": "0.0.1-rc.0",
+  "version": "0.1.0-rc.6",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "generate": "cross-env VUE_ENV=server vue-cli-service build"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.10",
@@ -23,7 +22,7 @@
     "github-markdown-css": "^2.10.0",
     "gitment": "^0.0.3",
     "katex": "^0.10.0",
-    "leancloud-storage": "^3.11.0",
+    "leancloud-storage": "^3.11.1",
     "lodash.merge": "^4.6.1",
     "lodash.pick": "^4.4.0",
     "markdown-it": "^8.4.2",
@@ -55,7 +54,6 @@
     "cross-env": "^5.2.0",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.6",
-    "prerender-spa-plugin": "^3.4.0",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
     "react": "0.13.x || 0.14.x || 15.x.x",

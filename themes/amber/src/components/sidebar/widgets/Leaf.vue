@@ -1,6 +1,6 @@
 <template lang="pug">
   transition(name="fade")
-    b-card.mb-3.bg-light.border-0(tag="section", v-if="isHome()")
+    b-card.mb-3.p-3.bg-light.border-0(no-body, tag="section", v-if="isHome()")
       h4.font-italic {{ $t('leaf') }}
       p(v-html="markdown(word)")
 </template>

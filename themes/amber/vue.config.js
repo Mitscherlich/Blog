@@ -1,10 +1,12 @@
 const path = require('path')
-const PrerenderSpaPlugin = require('prerender-spa-plugin')
-const Renderer = PrerenderSpaPlugin.PuppeteerRenderer
 const merge = require('lodash.merge')
 
+const isDev = !(process.env.NODE_ENV === 'production');
+
 const config = {
+  outputDir: 'source',
   productionSourceMap: false,
+  indexPath: path.relative('source', 'layout/index.ejs')
 }
 
 const proxy = {
@@ -17,33 +19,58 @@ const proxy = {
     'target': 'http://localhost:4000/assets',
     'changeOrigin': true,
     'pathRewrite': { '^/assets': '' },
-  },
-}
-
-const build = {
-  outputDir: 'source',
-  indexPath: path.relative('source', 'layout/index.ejs'),
-  devServer: { proxy },
-}
-
-const server = {
-  configureWebpack: {
-    plugins: [
-      new PrerenderSpaPlugin({
-        staticDir: path.resolve(__dirname, './dist'),
-        routes: ['/', '/archives', '/messages', '/donate', '/projects', '/profile'],
-        server: { proxy },
-        renderer: new Renderer({
-          renderAfterElementExists: '#blog-app',
-        }),
-      })
-    ]
   }
 }
 
-const ssr = (
-  process.env.VUE_ENV === 'server' &&
-  process.env.NODE_ENV === 'production'
-)
+const dev = {
+  devServer: { proxy }
+}
 
-module.exports = merge(config, ssr ? server : build)
+const prod = {
+  pwa: { themeColor: '#ffffff', msTileColor: '#ffffff' },
+  configureWebpack: {
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          bootstrap: {
+            name: 'chunk-bootstrap',
+            test: /[\\/]node_modules\/bootstrap[\\/]/,
+            chunks: 'all',
+            reuseExistingChunk: true,
+            enforce: true
+          },
+          bootstrapVue: {
+            name: 'chunk-bootstrap-vue',
+            test: /[\\/]node_modules\/bootstrap-vue[\\/]/,
+            chunks: 'all',
+            reuseExistingChunk: true,
+            enforce: true
+          },
+          fontAwesome: {
+            name: 'chunk-font-awesome',
+            test: /[\\/]node_modules\/@fortawesome[\\/]/,
+            chunks: 'all',
+            reuseExistingChunk: true,
+            enforce: true
+          },
+          markdownIt: {
+            name: 'chunk-markdown-it',
+            test: /[\\/]node_modules\/markdown-it[\\/]/,
+            chunks: 'all',
+            reuseExistingChunk: true,
+            enforce: true
+          },
+          vue: {
+            name: 'chunk-vue',
+            test: /[\\/]node_modules\/vue[\\/]/,
+            chunks: 'all',
+            reuseExistingChunk: true,
+            enforce: true
+          }
+        }
+      }
+    }
+  }
+}
+
+module.exports = merge(config, isDev ? dev: prod)

@@ -1,7 +1,7 @@
 <template lang="pug">
   transition(name="fade")
     aside.blog-sidebar.mb-3(v-if="ready")
-      Ads(:ads="ads")
+      //- Ads(:ads="ads")
       Leaf(:word="leaf")
       Elsewhere(:where="social")
       TagCloud(:tags="tags")
@@ -12,7 +12,7 @@
 <script lang="ts">
 import { Vue, Component, Watch } from 'vue-property-decorator';
 import { FETCH_TAGS } from '@/store/types';
-import Ads from './widgets/Ads.vue';
+// import Ads from './widgets/Ads.vue';
 import Elsewhere from './widgets/Elsewhere.vue';
 import Leaf from './widgets/Leaf.vue';
 import TagCloud from './widgets/TagCloud.vue';
@@ -20,7 +20,7 @@ import Github from './widgets/Github.vue';
 
 @Component({
   name: 'Sidebar',
-  components: { Ads, Elsewhere, Leaf, TagCloud, Github },
+  components: { /* Ads, */ Elsewhere, Leaf, TagCloud, Github },
 })
 export default class Sidebar extends Vue {
   private get ready(): boolean {

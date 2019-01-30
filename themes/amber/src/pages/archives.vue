@@ -1,17 +1,18 @@
 <template lang="pug">
-  b-container.blog-archives: b-row
-    b-col
-      b-alert(:show="timeLines.keys.length < 1", variant="prtimary") {{ $t('no_articles') }}
-      b-card.border-0.p-3.mb-3(no-body, :key="key", v-for="key of timeLines.keys")
-        h4.text-dark
-          fa-icon.mr-2(icon="clock")
-          | {{ key | date('MMM. YYYY') }}
-        ul.timeline
-          li.cursor-pointer(:key="slug", v-for="{ date, slug, link, title, text } of timeLines.entities[key]", @click="$router.push({ name: 'article', params: { slug } })")
-            b-link(:to="{ name: 'article', params: { slug } }") {{ title }}
-            b-link.float-right {{ date | date(format) }}
-            p #[small.text-muted {{ text }}]
-      Pagination(align="center", v-if="shouldPage", :total="pagination.total", :page-size="pagination.pageSize", :current-page="page", @current-change="onPage")
+  b-container.blog-archives
+    b-row
+      b-col
+        b-alert(:show="timeLines.keys.length < 1", variant="prtimary") {{ $t('no_articles') }}
+        b-card.border-0.p-3.mb-3(no-body, :key="key", v-for="key of timeLines.keys")
+          h4.text-dark
+            fa-icon.mr-2(icon="clock")
+            | {{ key | date('MMM. YYYY') }}
+          ul.timeline
+            li.cursor-pointer(:key="slug", v-for="{ date, slug, link, title, text } of timeLines.entities[key]", @click="$router.push({ name: 'article', params: { slug } })")
+              b-link(:to="{ name: 'article', params: { slug } }") {{ title }}
+              b-link.float-right {{ date | date(format) }}
+              p #[small.text-muted {{ text }}]
+        Pagination(align="center", v-if="shouldPage", :total="pagination.total", :page-size="pagination.pageSize", :current-page="page", @current-change="onPage")
 </template>
 
 <script lang="ts">
@@ -25,7 +26,7 @@ import day from 'dayjs';
   name: 'Archives',
   components: { Pagination },
 })
-export default class Archives extends Vue {
+export default class ArchivesPage extends Vue {
   private get format(): string {
     return this.site.format!.date_format;
   }

@@ -6,15 +6,17 @@ import Comments from './comments';
 export default class ThemeConfig {
   public comments: Comments = new Comments();
   public menu?: Array<{ text: string; link: string }>;
+  public slider: number|boolean = 10;
+  public topic?: string[]|boolean = false;
   public rss?: { enable: boolean; path?: string };
   public search?: { enable: boolean; engine?: 'build-in'|string; max?: number; };
   public sidebar?: { leaf?: string; github?: string; };
   public social?: {
-    website: Array<{ text: string; link: string }>;
-    [key: string]: string|Array<{ text: string; link: string }>;
+    website: Array<{ text: string; link: string; }>;
+    [key: string]: string|Array<{ text: string; link: string; }>;
   };
   public poweredBy?: { author: string; repo: string; };
-  public ga?: { enable: boolean; track_id: string };
+  public ga?: { enable: boolean; track_id: string; };
 
   constructor(raw?: any) {
     // tslint:disable:no-string-literal
@@ -25,6 +27,8 @@ export default class ThemeConfig {
     const { comments } = pick(themeConfig, 'comments');
     const commentsOpts = new Comments(comments);
     const { menu } = pick(themeConfig, 'menu');
+    const { slider } = pick(themeConfig, 'slider');
+    const { topic } = pick(themeConfig, 'topic');
     const flattenMenu = this.flattenMenu(menu);
     const { rss } = pick(themeConfig, 'rss');
     const { search } = pick(themeConfig, 'search');
@@ -32,7 +36,7 @@ export default class ThemeConfig {
     const { social } = pick(themeConfig, 'social');
     const { powered_by } = pick(themeConfig, 'powered_by');
     const { google_analytics } = pick(themeConfig, 'google_analytics');
-    merge(this, { menu: flattenMenu }, { rss, search, sidebar, social }, {
+    merge(this, { menu: flattenMenu }, { rss, search, sidebar, social, slider, topic }, {
       comments: commentsOpts,
       poweredBy: powered_by,
       ga: google_analytics,

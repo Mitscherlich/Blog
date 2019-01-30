@@ -3,7 +3,7 @@ import Vuex, { Store } from 'vuex';
 import VueRouter, { Route } from 'vue-router';
 import merge from 'lodash.merge';
 
-import GoogleAnalytics from '@/enhancers/analytics';
+import GoogleAnalytics from '@/plugins/analytics';
 import HexoConfig from '@/models/hexo';
 import ThemeConfig from '@/models/theme';
 import { fetchHexoConfig, fetchSiteData } from '@/api/hexo';

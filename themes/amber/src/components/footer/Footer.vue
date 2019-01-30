@@ -1,11 +1,11 @@
 <template lang="pug">
   footer.blog-footer
     b-dropdown.mb-2(:text="$t(locale)", variant="link")
-      b-dropdown-item(@click="locale = 'cn'") {{ $t('cn') }}
-      b-dropdown-item(@click="locale = 'tw'") {{ $t('tw') }}
+      b-dropdown-item(@click="locale = 'zh-CN'") {{ $t('zh-CN') }}
+      b-dropdown-item(@click="locale = 'zh-TW'") {{ $t('zh-TW') }}
       b-dropdown-item(@click="locale = 'en'") {{ $t('en') }}
-    p Made by #[a(target="_blank", :href="themeConfig.poweredBy.link") {{ themeConfig.poweredBy.author }}] with ❤️ and Powered by #[a(href="https://hexo.io/", target="_blank", title="Hexo") Hexo]
-    p Theme 🚧 #[a(target="_blank", href="https://github.com/Mitscherlich/hexo-theme-amber") Amber]
+    p(v-html="$t('powered_by_info', themeConfig.poweredBy)")
+    p(v-html="$t('theme_info')")
 </template>
 
 <script lang="ts">

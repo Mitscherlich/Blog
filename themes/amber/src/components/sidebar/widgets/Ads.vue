@@ -2,7 +2,7 @@
   transition(name="fade")
     b-carousel.ads.mb-4(indicators, :interval="interval", v-model="slide", v-if="!dismiss")
       b-link(v-for="({ text, image, link }, i) in ads", :key="`ads-${i}`", :href="link", target="_blank")
-        b-carousel-slide(:img-src="image", style="height: 160px;")
+        b-carousel-slide.ads-item: img(slot="img", :src="image")
       span.dismiss.cursor-pointer(@click="dismissAds") &times;
       span.tips {{ $t('ads') }}
 </template>
@@ -43,9 +43,15 @@ export default class Ads extends Vue {
 </script>
 
 <style lang="stylus" scoped>
-@import "~@/common/stylus/variables"
+@import "~@/common/style/variables"
 
 .ads
+  .ads-item
+    // height 10rem
+    img
+      // object-fit fill!important
+      height 100%
+      width 100%
   &:hover
     .dismiss
       display block
@@ -55,7 +61,7 @@ export default class Ads extends Vue {
     display none
     position absolute
     right .5rem
-    top -0.5rem
+    top -0.25rem
     color color-muted
     &:hover
       color color-light

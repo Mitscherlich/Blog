@@ -1,6 +1,6 @@
 <template lang="pug">
   transition(name="fade")
-    b-card.mb-3.border-0(tag="section", v-if="isHome()")
+    b-card.mb-3.p-3.border-0(no-body, tag="section", v-if="isHome()")
       h4.font-italic.mb-3 {{ $t('elsewhere') }}
       ol.list-unstyled
         li(v-if="where.facebook")

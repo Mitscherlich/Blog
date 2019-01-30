@@ -1,6 +1,6 @@
 <template lang="pug">
   transition(name="fade")
-    b-card.mb-3.border-0(tag="section", v-if="isHome()")
+    b-card.mb-3.p-3.border-0(no-body, tag="section", v-if="isHome()")
       h4.font-italic {{ $t('tagcloud') }}
       .tagcloud(style="mix-height: 180px; min-width: 180px; overflow: scoll")
         b-link.tagcloud-item(v-for="{ name, slug } in tags", :key="`tag-${slug}`", :to="{ name: 'related', query: { tag: slug } }") {{ name }}

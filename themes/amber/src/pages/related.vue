@@ -25,8 +25,10 @@ import {
   FETCH_CATEGORIES, FETCH_RELATED_POSTS_OF_CATEGORY,
 } from '@/store/types';
 
-@Component({ name: 'Related' })
-export default class Related extends Vue {
+@Component({
+  name: 'Related',
+})
+export default class RelatedPage extends Vue {
   private get format(): string {
     return this.site.format!.date_format;
   }

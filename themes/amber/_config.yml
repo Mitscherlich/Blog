@@ -12,6 +12,14 @@ menu:
   Projects: /projects
   Profile: /profile
 
+# Slider
+slider: 10 # unit: seconds. `true` or number for enable and `false` for disable
+
+# Topic
+topic:  # `true` or tag array for enable and `false` for disable
+  - essay
+  - note
+
 # RSS
 rss:
   enable: true

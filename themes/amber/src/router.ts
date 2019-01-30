@@ -44,14 +44,6 @@ export default new Router({
       meta: { title: 'profile', page: true, sidebar: false },
     },
     {
-      path: '/404',
-      name: '404',
-      component: () => import(/* webpackChunkName: "not-found" */ './pages/404.vue'),
-      meta: {
-        title: 'not_found',
-      },
-    },
-    {
       path: '/:slug',
       name: 'page',
       component: () => import(/* webpackChunkName: "pages" */ './pages/_slug.vue'),
