@@ -1,10 +1,10 @@
 # My personal Hexo blog
 <!-- Markdown snippet -->
-[![Build Status](https://travis-ci.org/Mitscherlich/mitscherlich.me.svg?branch=master)](https://travis-ci.org/Mitscherlich/mitscherlich.me)
+[![Build Status](https://travis-ci.org/Mitscherlich/blog.svg?branch=master)](https://travis-ci.org/Mitscherlich/blog)
 
-My personal blog based on [Hexo.js](https://hexo.io) and Github page. You can see the generated files at branch [`gh-pages`](https://github.com/Mitscherlich/mitscherlich.me/tree/master).
+My personal blog based on [Hexo.js](https://hexo.io) and Github page. You can see the generated files at branch [`gh-pages`](https://github.com/Mitscherlich/blog/tree/master).
 
-See branch [`master`](https://github.com/Mitscherlich/mitscherlich.me/) for more information.
+See branch [`master`](https://github.com/Mitscherlich/blog/) for more information.
 
 ## Contributors
 

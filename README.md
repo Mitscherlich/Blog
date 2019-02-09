@@ -1,8 +1,8 @@
 # My personal Hexo blog
 <!-- Markdown snippet -->
-[![Build Status](https://travis-ci.org/Mitscherlich/mitscherlich.me.svg?branch=master)](https://travis-ci.org/Mitscherlich/mitscherlich.me)
+[![Build Status](https://travis-ci.org/Mitscherlich/blog.svg?branch=master)](https://travis-ci.org/Mitscherlich/blog)
 
-My personal blog based on [Hexo.js](https://hexo.io) and [Vue.js](https://vuejs.org). You can see the generated files at branch [`gh-pages`](https://github.com/Mitscherlich/mitscherlich.me/tree/gh-pages).
+My personal blog based on [Hexo.js](https://hexo.io) and [Vue.js](https://vuejs.org). You can see the generated files at branch [`gh-pages`](https://github.com/Mitscherlich/blog/tree/gh-pages).
 
 ## Getting started
 
