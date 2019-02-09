@@ -1,7 +1,5 @@
 language: node_js
-
 sudo: false
-
 node_js:
   - "lts/*"
 
@@ -26,9 +24,9 @@ script:
   - cd -
   - npm run build
 
-before_deploy:
-  - git config --global user.name $USER_NAME
-  - git config --global user.email $USER_EMAIL
+# before_deploy:
+#   - git config --global user.name $USER_NAME
+#   - git config --global user.email $USER_EMAIL
 
 deploy:
   provider: pages
@@ -39,11 +37,11 @@ deploy:
   name: $USER_NAME
   github-token: $GITHUB_TOKEN
 
-after_deploy:
-  - cp -R public .deploy && cd .deploy && git init
-  - git add . && git commit -m "Update blog by travis-ci with build $TRAVIS_BUILD_NUMBER at `date '+%Y-%m-%d %H:%M:%S'`"
-  - git push --force --quiet https://${USER_NAME}:${GOGS_TOKEN}@${GOGS_REF} master
-  - cd -
+# after_deploy:
+#   - cp -R public .deploy && cd .deploy && git init
+#   - git add . && git commit -m "Update blog by travis-ci with build $TRAVIS_BUILD_NUMBER at `date '+%Y-%m-%d %H:%M:%S'`"
+#   - git push --force --quiet https://${USER_NAME}:${GOGS_TOKEN}@${GOGS_REF} master
+#   - cd -
 
 branches:
   only:
