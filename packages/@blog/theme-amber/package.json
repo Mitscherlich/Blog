@@ -1,0 +1,43 @@
+{
+  "name": "vuepress-theme-amber",
+  "version": "0.1.0-alpha.1",
+  "description": "A bootstrap blog theme for vuepress",
+  "main": "index.js",
+  "author": "Mitscherlich <mitscherlich36@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-brands-svg-icons": "^5.7.2",
+    "@fortawesome/free-regular-svg-icons": "^5.7.2",
+    "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "@fortawesome/vue-fontawesome": "^0.1.5",
+    "@vssue/api-github-v4": "^0.7.5",
+    "@vuepress/plugin-back-to-top": "^1.0.0-alpha.44",
+    "@vuepress/plugin-blog": "^1.0.0-alpha.44",
+    "@vuepress/plugin-clean-urls": "^1.0.0-alpha.44",
+    "@vuepress/plugin-google-analytics": "^1.0.0-alpha.44",
+    "@vuepress/plugin-medium-zoom": "^1.0.0-alpha.44",
+    "@vuepress/plugin-nprogress": "^1.0.0-alpha.44",
+    "@vuepress/plugin-pagination": "^1.0.0-alpha.44",
+    "@vuepress/plugin-search": "^1.0.0-alpha.44",
+    "axios": "^0.18.0",
+    "bootstrap-vue": "^2.0.0-rc.13",
+    "dayjs": "^1.8.10",
+    "dplayer": "^1.25.0",
+    "github-markdown-css": "^3.0.1",
+    "katex": "^0.10.1",
+    "prismjs": "^1.15.0",
+    "pug": "^2.0.3",
+    "pug-plain-loader": "^1.0.0",
+    "store": "^2.0.12",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "vssue": "^0.7.4",
+    "vue-i18n": "^8.8.2"
+  },
+  "devDependencies": {
+    "jquery": "^3.3.1",
+    "vue": "^2.6.8",
+    "webpack": "^4.29.6"
+  }
+}

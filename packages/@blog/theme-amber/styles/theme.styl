@@ -1,0 +1,71 @@
+@import "variables"
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6
+  font-family "Playfair Display", Georgia, "Times New Roman", serif
+  display block
+
+.h-250
+  height 250px
+
+.theme-container
+  display flex
+  min-height 100vh
+  flex-direction column
+  & > main.container
+    flex 1
+
+.box-shadow
+  box-shadow 0 .25rem .75rem rgba(0, 0, 0, .05)
+
+.card
+  transition all .3s ease-in-out
+  &:hover
+    @extend .box-shadow
+
+.markdown-body
+  line-height 1.75
+
+.go-to-top
+  color color-primary-d!important
+  transition all .1s ease-in-out
+  &:hover
+    color color-primary!important
+
+.medium-zoom-image
+  transition all .3s ease-in-out
+  border-radius .25rem
+  max-width 100%
+  &--open
+    border-radius 0
+  &:hover, &--open
+    @extend .box-shadow
+
+.line-numbers-mode
+  display flex
+  flex-direction row-reverse
+  pre
+    flex 1
+    border-radius .25rem
+    border-top-left-radius 0!important
+    border-bottom-left-radius 0!important
+  .line-numbers-wrapper
+    width 3em
+    background #2d2d2d
+    text-align center
+    white-space pre
+    word-spacing normal
+    word-break normal
+    word-wrap normal
+    color color-muted
+    margin .5em 0
+    padding 1em
+    font-size 87.5%
+    line-height 1.5
+    border-top-left-radius .25rem
+    border-bottom-left-radius .25rem
+    border-right 1px solid color-dark-d
+
+@import "partial/fonts"
+@import "partial/nprogress"
+@import "partial/timeline"

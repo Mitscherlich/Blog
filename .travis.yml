@@ -1,0 +1,36 @@
+language: node_js
+sudo: false
+node_js:
+  - "lts/*"
+
+cache:
+  apt: true
+  yarn: true
+  directories:
+    - node_modules
+
+before_install:
+  - export PATH=$HOME/.yarn/bin:$PATH
+  - yarn global add yarn
+  - yarn global add lerna
+
+install:
+  - yarn bootstrap
+
+script:
+  - yarn lint
+
+after_success:
+  - yarn build
+
+deploy:
+  provider: pages
+  local-dir: dist
+  skip_cleanup: true
+  keep-history: true
+  committer-from-gh: true
+  github-token: $GITHUB_TOKEN
+
+branches:
+  only:
+    - master

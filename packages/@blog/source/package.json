@@ -1,0 +1,14 @@
+{
+  "name": "@blog/source",
+  "version": "0.1.0-alpha.1",
+  "description": "blog markdown source",
+  "private": true,
+  "license": "CC-BY-4.0",
+  "scripts": {
+    "dev": "vuepress dev --temp .temp .",
+    "build": "vuepress build --temp .temp ."
+  },
+  "devDependencies": {
+    "vuepress": "^1.0.0-alpha.44"
+  }
+}
