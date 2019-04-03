@@ -5,6 +5,7 @@ author: Mitscherlich
 date: 2019-04-01 13:30:08
 category: Note
 tags:
+  - JavaScript
   - 算法
 ---
 
@@ -14,7 +15,7 @@ tags:
 
 > 给定一个字典(对象)，假设其中部分键值是有 '.' 号的字符串，试设计一个 `nested` 函数，使得其变成一个复合对象 (假设不存在重复键值)。
 
-<details><summary>示例：</summary>
+<details open><summary>示例：</summary>
 <!-- make browser happy :) -->
 
 给定对象：
@@ -64,7 +65,7 @@ const nested = obj => {
 }
 ```
 
-<details><summary>运行结果：</summary>
+<details open><summary>运行结果：</summary>
 <!-- make browser happy :) -->
 
 ```js
@@ -97,7 +98,7 @@ const nested = obj => {
 
 > 注意 `Object.assign` 不能向 `Nil` (也就是 `null` 和 `undefined`) 赋值，所以这里用三目运算符进行了包裹
 
-<details><summary>运行结果：</summary>
+<details open><summary>运行结果：</summary>
 <!-- make browser happy :) -->
 
 ```js
@@ -134,7 +135,7 @@ const nested = obj => {
 }
 ```
 
-<details><summary>运行结果：</summary>
+<details open><summary>运行结果：</summary>
 <!-- make browser happy :) -->
 
 ```js
@@ -209,7 +210,7 @@ const nested = obj => {
 }
 ```
 
-<details><summary>运行结果：</summary>
+<details open><summary>运行结果：</summary>
 <!-- make browser happy :) -->
 
 ```js
