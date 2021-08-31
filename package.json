@@ -1,0 +1,35 @@
+{
+  "name": "@mitscherlich/blog",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "export": "next export"
+  },
+  "dependencies": {
+    "@badrap/bar-of-progress": "^0.1.2",
+    "@heroicons/react": "^1.0.4",
+    "axios": "^0.21.1",
+    "daisyui": "^1.14.0",
+    "feed": "^4.2.2",
+    "next": "^11.1.2",
+    "notion-client": "^4.8.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-notion": "^0.10.0",
+    "react-notion-x": "^4.8.6",
+    "react-transition-group": "^4.4.2",
+    "use-dark-mode": "^2.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@types/node": "^16.7.9",
+    "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-transition-group": "^4.4.2",
+    "autoprefixer": "^10.3.3",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.9",
+    "typescript": "^4.4.2"
+  }
+}
