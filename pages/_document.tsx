@@ -8,7 +8,7 @@ class MyDocument extends Document {
     return (
       <Html data-theme="garden" style={{ backgroundImage: svg }}>
         <Head>
-          <script async src="https://cdn.splitbee.io/sb.js" data-token="3GA234WXTB56" />
+          <script async src="https://analytics.mitscherlich.me/sb.js" data-token="3GA234WXTB56" />
         </Head>
         <body>
           <Main />
