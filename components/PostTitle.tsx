@@ -6,7 +6,7 @@ const PostTitle = ({ post }: { post: Post }) => {
     <div className="mb-8 mt-4 px-3">
       <div className="flex flex-wrap">
         {(post.tags ?? []).map((tag) => (
-          <div className="badge badge-primary mr-1">
+          <div className="badge badge-primary mr-1" key={tag}>
             <div className="flex items-center space-x-1 ">
               <TagIcon className="w-4 h-4" /> <span>{tag}</span>
             </div>

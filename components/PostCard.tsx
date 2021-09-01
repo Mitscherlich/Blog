@@ -10,7 +10,7 @@ const PostCard = ({ post }: { post: Post }) => {
         <div className="card-body bg-base-100">
           <div className="flex flex-wrap">
             {(post.tags ?? []).map((tag) => (
-              <span className="badge badge-primary mr-1">
+              <span className="badge badge-primary mr-1" key={tag}>
                 <TagIcon className="w-3 h-3 mr-1" />
                 <span>{tag}</span>
               </span>

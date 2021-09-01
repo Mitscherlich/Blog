@@ -36,7 +36,7 @@ export const getPostView = async (slug: string): Promise<number> => {
   const { data: { count } } = await axiosJson.get<{ count: number }>(
     'https://api.splitbee.io/v1/blog.mitscherlich.me/pageviews',
     {
-      params: { slug },
+      params: { page: slug },
       headers: { 'x-api-key': process.env.SPLITBEE_API_TOKEN },
     }
   )
@@ -45,11 +45,9 @@ export const getPostView = async (slug: string): Promise<number> => {
 
 export const fetchPostListWithViews = async (): Promise<Post[]> => {
   const posts = await fetchPostList()
-  const promises = []
 
-  for (const post of posts) {
-    promises.push(getPostView(formatSlug(post.date, post.slug)).then((count) => (post.views = count)))
-  }
-
-  return await Promise.all(promises).then(() => posts)
+  return await Promise.all(posts.map(async post => ({
+    ...post,
+    views: await getPostView(formatSlug(post.date, post.slug)),
+  })))
 }
