@@ -23,6 +23,14 @@ const Navbar = () => {
           </a>
         </div>
         <div className="flex items-stretch">
+          <a href="https://github.com/Mitscherlich" target="_blank" rel="noopener noreferrer">
+            <div className="btn btn-ghost btn-sm rounded mr-2">
+              Github
+              <ExternalLinkIcon className="ml-2 w-5 h-5" />
+            </div>
+          </a>
+        </div>
+        <div className="flex items-stretch">
           <a href="/feed" target="_blank" rel="noopener noreferrer">
             <div className="btn btn-primary btn-sm rounded">
               RSS
@@ -45,6 +53,17 @@ const Navbar = () => {
               rel="noopener noreferrer"
             >
               Portfolio
+              <ExternalLinkIcon className="ml-2 w-5 h-5" />
+            </a>
+          </li>
+          <li>
+            <a
+              className="flex items-center"
+              href="https://github.com/Mitscherlich"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Github
               <ExternalLinkIcon className="ml-2 w-5 h-5" />
             </a>
           </li>
