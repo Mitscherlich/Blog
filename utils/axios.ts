@@ -6,4 +6,3 @@ export const axiosJson = axios.create({
   },
 })
 
-axiosJson.interceptors.response.use((response) => response.data)

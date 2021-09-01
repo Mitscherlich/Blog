@@ -8,9 +8,13 @@ const PostCard = ({ post }: { post: Post }) => {
     <Link href="/[year]/[month]/[slug]" as={formatSlug(post.date, post.slug)}>
       <a className="card compact bordered rounded transition transform hover:-translate-y-1">
         <div className="card-body bg-base-100">
-          <div className="badge badge-primary">
-            <TagIcon className="w-3 h-3 mr-1" />
-            <span>{post.tag}</span>
+          <div className="flex flex-wrap">
+            {(post.tags ?? []).map((tag) => (
+              <span className="badge badge-primary mr-1">
+                <TagIcon className="w-3 h-3 mr-1" />
+                <span>{tag}</span>
+              </span>
+            ))}
           </div>
 
           <div className="card-title mt-2">{post.name}</div>

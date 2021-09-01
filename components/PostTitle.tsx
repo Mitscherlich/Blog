@@ -4,10 +4,14 @@ import { Post } from '../api/post'
 const PostTitle = ({ post }: { post: Post }) => {
   return (
     <div className="mb-8 mt-4 px-3">
-      <div className="badge badge-primary">
-        <div className="flex items-center space-x-1">
-          <TagIcon className="w-4 h-4" /> <span>{post.tag}</span>
-        </div>
+      <div className="flex flex-wrap">
+        {(post.tags ?? []).map((tag) => (
+          <div className="badge badge-primary mr-1">
+            <div className="flex items-center space-x-1 ">
+              <TagIcon className="w-4 h-4" /> <span>{tag}</span>
+            </div>
+          </div>
+        ))}
       </div>
 
       <div className="text-2xl font-bold my-3">{post.name}</div>
