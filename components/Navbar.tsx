@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { AcademicCapIcon, ExternalLinkIcon, RssIcon, MenuIcon } from '@heroicons/react/outline'
+import { HomeIcon, ExternalLinkIcon, RssIcon, MenuIcon } from '@heroicons/react/outline'
 
 const Navbar = () => {
   return (
@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="flex-1">
         <Link href="/">
           <div className="btn btn-ghost btn-sm rounded">
-            <AcademicCapIcon className="mr-4 w-5 h-5" />
+            <HomeIcon className="mr-4 w-5 h-5" />
             <span>Home</span>
           </div>
         </Link>

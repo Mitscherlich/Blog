@@ -1,8 +1,8 @@
 import ProgressBar from '@badrap/bar-of-progress'
 import { AppProps } from 'next/app'
 import Router from 'next/router'
-
-import 'react-notion/src/styles.css'
+import 'katex/dist/katex.min.css'
+import 'react-notion-x/src/styles.css'
 import 'prismjs/themes/prism-tomorrow.css'
 
 import '../styles.css'

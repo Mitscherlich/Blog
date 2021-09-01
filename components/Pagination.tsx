@@ -11,7 +11,7 @@ export interface PaginationType {
 const Pagination = ({ pagination }: { pagination: PaginationType }) => {
   return (
     <div className="md:mt-4 grid grid-cols-1 md:grid-cols-2 gap-2">
-      {pagination.prev && (
+      {pagination.prev ? (
         <Link
           href="/[year]/[month]/[slug]"
           as={formatSlug(pagination.prev.date, pagination.prev.slug)}
@@ -21,6 +21,8 @@ const Pagination = ({ pagination }: { pagination: PaginationType }) => {
             <span className="truncate mr-2">{pagination.prev?.name}</span>
           </a>
         </Link>
+      ) : (
+        <div className="placeholder" />
       )}
       {pagination.next && (
         <Link
