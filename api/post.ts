@@ -1,4 +1,5 @@
-import { axiosJson } from 'utils/axios'
+import { axiosJson } from '../utils/axios'
+import { formatSlug } from '../utils/slugFormat'
 
 export interface Author {
   id: string
@@ -40,4 +41,15 @@ export const getPostView = async (slug: string): Promise<number> => {
     }
   )
   return count
+}
+
+export const fetchPostListWithViews = async (): Promise<Post[]> => {
+  const posts = await fetchPostList()
+  const promises = []
+
+  for (const post of posts) {
+    promises.push(getPostView(formatSlug(post.date, post.slug)).then((count) => (post.views = count)))
+  }
+
+  return await Promise.all(promises).then(() => posts)
 }

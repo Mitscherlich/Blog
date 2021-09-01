@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import { fetchPostList, Post } from '../api/post'
+import { fetchPostListWithViews, Post } from '../api/post'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import PostCard from '../components/PostCard'
 
 export async function getStaticProps() {
-  const posts = await fetchPostList()
+  const posts = await fetchPostListWithViews()
 
   return {
     props: {
