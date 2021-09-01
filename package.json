@@ -3,8 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "export": "next export"
+    "build": "next build"
   },
   "dependencies": {
     "@badrap/bar-of-progress": "^0.1.2",
