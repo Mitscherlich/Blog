@@ -16,7 +16,7 @@ export const getStaticProps = async ({ params: { slug } }: { params: { slug: str
   // Get all posts again
   const posts = await fetchPostList()
 
-  // Find the current blogpost by slug
+  // Find the current blog post by slug
   const postIndex = posts.findIndex((t) => t.slug === slug)
   const post = posts[postIndex]
 
@@ -77,13 +77,6 @@ const BlogPost: FC<{ recordMap: ExtendedRecordMap; post: Post; pagination: Pagin
             </div>
 
             <Pagination pagination={pagination} />
-
-            {/* <div className="mt-8">
-              <DiscussionEmbed
-                shortname="spencerwoo"
-                config={{ identifier: formatSlug(post.date, post.slug) }}
-              />
-            </div> */}
           </div>
         </div>
 
@@ -98,7 +91,7 @@ export const getStaticPaths = async () => {
   const publishedPosts = posts.filter((post) => post.published)
   return {
     paths: publishedPosts.map(({ date, slug }) => formatSlug(date, slug)),
-    fallback: false,
+    fallback: true,
   }
 }
 
