@@ -25,7 +25,7 @@ const NOTION_BLOG_ID = process.env.NOTION_BLOG_ID || 'c0aee12ff2404520861abaae2d
 
 export const fetchPostList = async (): Promise<Post[]> => {
   const { data: posts = [] } = await axiosJson.get<Post[]>(`https://notion-api.splitbee.io/v1/table/${NOTION_BLOG_ID}`)
-  return posts.sort((p, v) => new Date(p.date).getTime() - new Date(v.date).getTime())
+  return posts.sort((p, v) => new Date(v.date).getTime() - new Date(p.date).getTime())
 }
 
 export const getPostView = async (slug: string): Promise<number> => {
