@@ -8,7 +8,7 @@ class MyDocument extends Document {
     return (
       <Html data-theme="garden" style={{ backgroundImage: svg }}>
         <Head>
-          <link rel="manifest" href="/manifest.json" />
+          <link rel="manifest" href="/manifest.webmanifest" />
           <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
           <meta name="theme-color" content="#f7f7f7" />
           <script async src="https://analytics.mitscherlich.me/sb.js" data-token="3GA234WXTB56" />
