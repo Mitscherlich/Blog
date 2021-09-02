@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="flex items-stretch">
           <a href="https://mitscherlich.me" target="_blank" rel="noopener noreferrer">
             <div className="btn btn-ghost btn-sm rounded mr-2">
-              Portfolio
+              Profile
               <ExternalLinkIcon className="ml-2 w-5 h-5" />
             </div>
           </a>
@@ -52,7 +52,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Portfolio
+              Profile
               <ExternalLinkIcon className="ml-2 w-5 h-5" />
             </a>
           </li>
