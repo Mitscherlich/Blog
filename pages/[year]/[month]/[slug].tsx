@@ -15,17 +15,18 @@ const notion = new NotionAPI()
 export const getStaticProps = async ({ params: { slug } }: { params: { slug: string } }) => {
   // Get all posts again
   const posts = await fetchPostList()
+  const publishedPosts = posts.filter((post) => post.published)
 
   // Find the current blog post by slug
-  const postIndex = posts.findIndex((t) => t.slug === slug)
-  const post = posts[postIndex]
+  const postIndex = publishedPosts.findIndex((t) => t.slug === slug)
+  const post = publishedPosts[postIndex]
 
   // Get page views from current post
   post.views = await getPostView(formatSlug(post.date, post.slug))
 
   const pagination: PaginationType = {
-    prev: postIndex - 1 >= 0 ? posts[postIndex - 1] : null,
-    next: postIndex + 1 < posts.length ? posts[postIndex + 1] : null,
+    prev: postIndex - 1 >= 0 ? publishedPosts[postIndex - 1] : null,
+    next: postIndex + 1 < publishedPosts.length ? publishedPosts[postIndex + 1] : null,
   }
 
   const recordMap = await notion.getPage(post.id)
