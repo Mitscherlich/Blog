@@ -32,3 +32,4 @@ yarn-error.log*
 # Next PWA generated files
 /public/sw.js
 /public/workbox-*.js
+/public/*.map
